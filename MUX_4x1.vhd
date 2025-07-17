@@ -1,0 +1,30 @@
+ ---vhdl code for 4x1 mux using 2x1 mux
+ 
+ library ieee;
+ use ieee.std_logic_1164.all;
+ use work.EE638.all;
+ 
+ 
+ entity MUX_4x1 is
+ 
+        port(I : in std_logic_vector(3 downto 0);
+		       S :in std_logic_vector(1 downto 0);
+				 O0 :out std_logic);
+				 
+end MUX_4x1;
+
+architecture STRUCTURE of MUX_4x1 is 
+
+   signal x0,x1 : std_logic;
+	
+	
+begin 
+     
+   
+	 MX1 : MUX_2x1 port map(I(0),I(1),S(0),x0);
+	 MX2 : MUX_2x1 port map(I(2),I(3),S(0),x1);
+	 MX3 : MUX_2x1 port map(x0,x1,S(1),O0);
+	 
+end STRUCTURE;
+ 
+ 

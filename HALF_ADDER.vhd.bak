@@ -1,0 +1,36 @@
+--PROGRAM FOR HALF ADDER
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+
+entity HALF_ADDER is
+
+       port( I0, I1 :in std_logic;    --inputs of half adder
+		        S, C : out std_logic);  --sum and carry of half adder
+				  
+end HALF_ADDER;
+
+
+architecture STRUCTURE of HALF_ADDER is     ---Architecture description of half Adder
+
+
+     component AND_2 is              --component declaration
+	  
+       port(I0, I1 : in std_logic;   --inputs of AND gate
+		      O0 : out std_logic);     --output of AND gate
+     end AND_2;
+	   
+		
+	   component XOR_2 is             --component declaration
+		
+       port(I0, I1 : in std_logic;   --inputs of  XOR gate
+		      O0 : out std_logic);     --output of  XOR gate
+      end XOR_2;
+		
+begin 
+      
+		U0 : XOR_2 port map(I0,I1,S);
+		U1 : AND_2 port_map(I0,I1,C);
+		
+end STRUCTURE;

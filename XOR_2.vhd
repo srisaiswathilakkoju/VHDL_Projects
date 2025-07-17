@@ -1,0 +1,19 @@
+--VHDL Program for 2 input XOR gate
+
+library ieee;                     --library declaration
+use ieee.std_logic_1164.all;
+
+
+entity XOR_2 is
+       port(I0, I1 : in std_logic;   --inputs of  XOR gate
+		      O0 : out std_logic);     --output of  XOR gate
+end XOR_2;
+
+architecture STRUCTURE of XOR_2 is   --architecture description of XOR gate
+
+begin 
+    
+	 O0 <= I0 xor I1;        
+	 
+	 
+end STRUCTURE;

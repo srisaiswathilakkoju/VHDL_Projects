@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use work.EE638.all;
+
+entity MULTIPLIER is
+
+      port(A,B : in std_logic_vector(3 downto 0);
+		      
+           P : out std_logic_vector(7 downto 0));
+end MULTIPLIER;
+
+
+architecture STRUCTURE of MULTIPLIER is
+
+       signal ag :std_logic_vector(15 downto 0); ---outputs of all and gates involved in ckt
+		 signal f : std_logic_vector(7 downto 0); --outputs of FBA1,FBA2
+		 
+		 
+begin: 
+      
+		AG : AND_2 port map(A(0),B(0),ag(0)); ----p0 
+
+      FBA1: FOUR_BIT_ADDER port map ()
+
